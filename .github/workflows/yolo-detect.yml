@@ -35,7 +35,7 @@ jobs:
         mkdir -pv onnx
         cd onnx
         wget https://github.com/zichuan0923/someting-strange/blob/main/best.pt
-        python ../export_det_v8.pyc -w yolo.pt --sim
+        python ../export_det_v8.pyc -w best.pt --sim
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
@@ -72,7 +72,7 @@ jobs:
         cd yolo
         mkdir -pv rknn
         cp -vr ${SRC_PATH}/onnx_artifacts/*.onnx ./rknn/
-        python convert.pyc rknn/yolo.onnx rk3588 i8 rknn/yolo.rknn
+        python convert.pyc rknn/best.onnx rk3588 i8 rknn/best.rknn
 
 
     - name: Upload artifact
