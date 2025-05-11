@@ -34,7 +34,7 @@ jobs:
         cd yolo
         mkdir -pv onnx
         cd onnx
-        wget https://raw.githubusercontent.com/zichuan0923/someting-strange/main/best.pt
+        wget https://raw.githubusercontent.com/zichuan0923/someting-strange/main/best.pt -O best.pt
         python ../export_det_v11.pyc -w best.pt --sim
 
     - name: Upload artifact
