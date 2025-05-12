@@ -107,7 +107,7 @@ jobs:
         source /usr/local/Ascend/ascend-toolkit/set_env.sh
         export LD_LIBRARY_PATH=/usr/local/Ascend/ascend-toolkit/latest/x86_64-linux/devlib/:$LD_LIBRARY_PATH
         cd om
-        atc --model=best.onnx --framework=5 --output=11s --soc_version=Ascend310B4
+        atc --model=best.onnx --framework=5 --input_format=NCHW --output=11s --soc_version=Ascend310B4
 
 
     - name: Upload artifact
